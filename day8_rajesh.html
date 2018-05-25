@@ -1,0 +1,109 @@
+<!Doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="functionality.js"></script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Your Face</legend>
+            <div>
+                <form>
+                    <p>
+                        <label for="image">Your Image: </label>
+                        <input required type='file' onchange="readURL(this);" accept="image/*"/>                       
+                    </p>
+                    <p>
+                        <label for="imageprv" style="vertical-align: top">Image Preview:</label> <img id="inputfile" src="" />
+                    </p>
+                    <p>
+                        <label for="audiovideo">Audio/Video: </label>
+                        <input required type='file' onchange="readURL(this);" accept="audio/*|video/*|image/*"/>                       
+                    </p>
+                </form>               
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Your General Details</legend>
+            <div>
+                <form>
+                <p>
+                    <label for="name">Name:</label>
+                    <input required type="text" placeholder="Your full name" name="name" id="name"/>
+                </p>
+                <p>
+                    <label for="gender">Gender: </label>
+                    <input type="radio" checked="checked" id="gender" value="Male"> Male <input type="radio" id="gender" value="Female"> Female
+                </p>
+                <p>
+                    <label for="age">Age: </label>
+                    <input required type="number" value="18" id="age" style="width: 50px" /> <br/>
+                </p>
+                <p>
+                    <label for="dob">Date of Birth: </label>
+                    <input required type="date" placeholder="mm/dd/yyyy" id="dob" style="width: 170px"/> <br/>
+                </p>
+                <p>
+                    <label for="color">Favorite Color: </label>
+                     <input required type="color" value="#000000" style="width: 50px"/> <br/>
+                </p>
+                <p>
+                    <label for="country">Which Country: </label>
+                    <select required style="width: 173px">
+                     <option value=""></option>
+                     <option value="China">China</option>
+                     <option value="India">India</option>
+                     <option value="USA">USA</option>
+                    </select>
+                </p>
+                </form>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend> Your Indicators </legend>
+            <div>
+                <form>
+                    <p> 
+                        <label for="height">Height: </label>
+                        <input class="bt_low" type="button" disabled value="Short"> 
+                        <input required type="range" min="1" max="10" value="5" id="height"> 
+                        <input class="bt_high" type="button" disabled value="Tall">  <br/>
+                    </p>
+                    <p> 
+                        <label for="salary">Salary: </label>
+                        <input class="bt_low" type="button" disabled value="Poor"> 
+                        <input required type="range" min="1" max="10" value="5" id="salary"> 
+                        <input class="bt_high" type="button" disabled value="Rich">  <br/>
+                    </p>
+                </form>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend> Your Cotact Information </legend>
+            <div>
+                <form>
+                    <p>
+                        <label for="email">Email: </label>
+                        <input required type="email" id="email" /> <br/>
+                    </p>
+                    <p>
+                        <label for="mobile">Mobile: </label>
+                        <input required type="text" id="mobile" name="mobile" onchange="numberValidation()"/> <br/>
+                        <span id="mobileerror" class="error"></span>
+                    </p>
+                    <p>
+                        <label for="address" style="vertical-align: top">Address: </label>
+                        <textarea required id="address" rows="3" cols="50"> </textarea> <br/>
+                    </p>
+                    <p>
+                        <label for="contact">Method to contact you: </label>
+                        <input type="checkbox" id="email" name="contactMethod" value="email" checked> Email
+                        <input type="checkbox" id="whatsapp" name="contactMethod" value="whatsapp"> Whatsapp
+                        <input type="checkbox" id="inapp" name="contactMethod" value="inapp"> In-app chat
+                    </p>
+                </form> 
+            </div>
+        </fieldset>
+    </body>
+</html>
